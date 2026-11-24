@@ -1,0 +1,3 @@
+PAD_USER=you
+PAD_PASS=change-me
+SESSION_SECRET=replace-with-output-of-openssl-rand-hex-32
