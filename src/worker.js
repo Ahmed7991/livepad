@@ -172,6 +172,8 @@ export class Pad extends DurableObject {
     this.text = rows.map(r => typeof r.s === "string" ? r.s : unpackUtf16(r.s)).join("");
     const v = this.sql.exec("SELECT v FROM meta WHERE k='ver'").toArray();
     this.ver = v.length ? v[0].v : 0;
+    // One-time conversion of chunks written as TEXT by earlier versions.
+    if (rows.some(r => typeof r.s === "string")) this.persist(0);
     ctx.setWebSocketAutoResponse(new WebSocketRequestResponsePair("ping", "pong"));
   }
 
