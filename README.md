@@ -7,8 +7,8 @@ Runs on Cloudflare Workers with a single Durable Object and no third-party packa
 - Installable as an app; on Android, text can be sent to the pad from the share menu
 - Stays logged in on each device
 
-**Scope:** one pad and one login per deployment. The pad is stored unencrypted in your Cloudflare
-account, so it isn't meant for passwords or other secrets.
+**Scope:** one pad and one login per deployment. The pad is not end-to-end encrypted: anyone with
+access to your Cloudflare account can read it, so it isn't meant for passwords or other secrets.
 
 ## Deploy
 
